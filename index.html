@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aford Architects</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #e9dfd1;
+  --panel: rgba(249, 243, 235, 0.78);
+  --panel-strong: #f4ecdf;
+  --text: #34291f;
+  --muted: #786655;
+  --line: rgba(73, 53, 36, 0.12);
+  --accent: #b49a7b;
+  --shadow: 0 22px 70px rgba(55, 39, 24, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(180, 154, 123, 0.16), transparent 28%),
+    linear-gradient(180deg, #f4ece2 0%, #eadfce 48%, #e3d6c6 100%);
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+}
+
+.page-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+  background: transparent;
+  border-bottom: none;
+}
+
+.nav {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 26px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  text-decoration: none;
+  flex: 0 0 180px;
+}
+
+.logo img {
+  width: 74px;
+  height: 74px;
+  border-radius: 0;
+  object-fit: cover;
+  border: none;
+  mix-blend-mode: multiply;
+  opacity: 0.96;
+  filter: grayscale(1) contrast(1.04);
+}
+
+.logo-mark {
+  display: none;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  flex: 1;
+}
+
+.nav-links a {
+  color: rgba(255, 255, 255, 0.96);
+  text-decoration: none;
+  font-size: 0.82rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: #ffffff;
+}
+
+.nav-links a:first-child::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+}
+
+.nav-toggle {
+  flex: 0 0 180px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-toggle span {
+  width: 30px;
+  height: 14px;
+  position: relative;
+  display: inline-block;
+}
+
+.nav-toggle span::before,
+.nav-toggle span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1.5px;
+  background: rgba(58, 44, 31, 0.9);
+}
+
+.nav-toggle span::before {
+  top: 1px;
+}
+
+.nav-toggle span::after {
+  bottom: 1px;
+}
+
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: end;
+  padding: 132px 0 56px;
+  background:
+    linear-gradient(90deg, rgba(35, 28, 22, 0.62) 0%, rgba(35, 28, 22, 0.26) 38%, rgba(35, 28, 22, 0.06) 100%),
+    linear-gradient(180deg, rgba(238, 228, 215, 0.18), rgba(238, 228, 215, 0.03)),
+    url("assets/projects/project-03.jpeg") center/cover no-repeat;
+}
+
+.hero-brand {
+  width: min(360px, 62vw);
+  margin-bottom: 22px;
+}
+
+.hero-brand img {
+  object-fit: contain;
+  mix-blend-mode: screen;
+  filter: grayscale(1) brightness(1.6) contrast(1.05);
+  opacity: 0.94;
+}
+
+.eyebrow {
+  color: rgba(244, 236, 226, 0.86);
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.74rem;
+  margin-bottom: 14px;
+}
+
+.hero-shell {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+}
+
+.hero-copy {
+  max-width: 470px;
+  color: #f7efe6;
+}
+
+.hero-copy h1 {
+  font-family: "Newsreader", serif;
+  font-weight: 500;
+  font-size: clamp(3.2rem, 6vw, 5rem);
+  line-height: 0.96;
+  margin-bottom: 18px;
+}
+
+.section-heading h2,
+.contact-copy h2 {
+  font-family: "Newsreader", serif;
+  font-weight: 600;
+  line-height: 0.96;
+}
+
+.hero-copy p {
+  color: rgba(247, 239, 230, 0.88);
+  max-width: 48ch;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn,
+.btn-ghost,
+.chip {
+  border-radius: 999px;
+  transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+}
+
+.btn,
+.btn-ghost {
+  padding: 13px 20px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  background: #463528;
+  color: #f7efe6;
+}
+
+.btn-ghost {
+  border: 1px solid rgba(247, 239, 230, 0.35);
+  color: #f7efe6;
+}
+
+.btn:hover,
+.btn-ghost:hover,
+.chip:hover,
+.chip:focus-visible,
+.card:hover,
+.card:focus-visible {
+  transform: translateY(-2px);
+}
+
+.section {
+  padding: 0 0 82px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.section-heading h2 {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+}
+
+.section-heading p {
+  max-width: 46ch;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.portfolio-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  border: 1px solid var(--line);
+  background: rgba(250, 244, 237, 0.74);
+  color: var(--muted);
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.chip.is-active {
+  background: #463528;
+  border-color: #463528;
+  color: #f7efe6;
+}
+
+.portfolio-note {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--panel);
+  box-shadow: 0 16px 40px rgba(15, 15, 15, 0.06);
+  cursor: pointer;
+}
+
+.card[hidden] {
+  display: none;
+}
+
+.card-media {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-media img {
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.card:hover .card-media img,
+.card:focus-visible .card-media img {
+  transform: scale(1.03);
+  filter: saturate(0.92);
+}
+
+.card-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(70, 53, 40, 0.84);
+  color: #f7efe6;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card-body {
+  padding: 18px 18px 20px;
+}
+
+.card-body h3 {
+  font-family: "Newsreader", serif;
+  font-size: 1.7rem;
+  margin-bottom: 8px;
+}
+
+.card-body p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.card-body .prompt {
+  display: inline-flex;
+  margin-top: 14px;
+  color: var(--text);
+  font-size: 0.92rem;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.process-step {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 22px;
+  background: rgba(249, 243, 235, 0.62);
+}
+
+.process-step strong {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.process-step p {
+  color: var(--muted);
+}
+
+.process-step span {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.plan-grid .card-media img {
+  height: 340px;
+  object-fit: contain;
+  background: rgba(243, 234, 223, 0.86);
+  padding: 12px;
+}
+
+.contact {
+  padding-bottom: 42px;
+}
+
+.contact-panel {
+  border-radius: 28px;
+  border: 1px solid var(--line);
+  background: rgba(246, 238, 228, 0.92);
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+}
+
+.contact-copy p,
+.contact-card a,
+.contact-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.contact-card {
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: rgba(250, 244, 237, 0.72);
+  padding: 24px;
+}
+
+.contact-card strong {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.contact-card a {
+  display: block;
+  text-decoration: none;
+  margin-bottom: 14px;
+}
+
+footer {
+  padding: 30px 0 46px;
+}
+
+.footer-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  color: var(--muted);
+  border-top: 1px solid rgba(21, 21, 21, 0.08);
+  padding-top: 18px;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  text-decoration: none;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(10, 10, 10, 0.82);
+  z-index: 90;
+}
+
+.lightbox[hidden] {
+  display: none;
+}
+
+.lightbox-panel {
+  width: min(1040px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  border-radius: 24px;
+  background: #f2f1ec;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px;
+}
+
+.lightbox-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: start;
+  margin-bottom: 14px;
+}
+
+.lightbox-copy h3 {
+  font-family: "Newsreader", serif;
+  font-size: 2rem;
+  margin-bottom: 6px;
+}
+
+.lightbox-copy p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.lightbox-close {
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 999px;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+}
+
+.lightbox-image {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.lightbox-image img {
+  max-height: 68vh;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .contact-panel,
+  .portfolio-grid,
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .nav {
+    padding: 14px 0;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .logo img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .nav-toggle {
+    flex-basis: auto;
+  }
+
+  .hero {
+    min-height: 88vh;
+    padding-top: 110px;
+    padding-bottom: 42px;
+  }
+
+  .portfolio-grid,
+  .process-grid,
+  .contact-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-brand {
+    width: min(280px, 72vw);
+  }
+
+  .section-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .lightbox-panel {
+    padding: 14px;
+  }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="nav">
+    <a class="logo" href="#home" aria-label="Aford Architects home">
+      <img src="assets/branding/logo-123.jpg" alt="Aford Architects logo">
+    </a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a href="#home">Home</a>
+      <a href="#portfolio">Projects</a>
+      <a href="#plans">Plans</a>
+      <a href="#process">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-toggle" aria-hidden="true">
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-shell">
+      <div class="hero-copy">
+        <div class="hero-brand">
+          <img src="assets/branding/logo-123.jpg" alt="Aford Architects brand mark">
+        </div>
+        <p class="eyebrow">Architecture Rooted in Context</p>
+        <h1>Designing Spaces That Inspire</h1>
+        <p>Architecture rooted in context, crafted for life.</p>
+        <div class="hero-actions">
+          <a href="#portfolio" class="btn">Explore Our Work</a>
+        </div>
+      </div>
+    </div>
+  </section>
+<div class="page-shell">
+  <section class="section" id="portfolio">
+    <div class="section-heading">
+      <div>
+        <h2>Project Portfolio</h2>
+        <p>A curated set of 3D exterior studies showing facade language, proportion, lighting, and material balance across residential concepts.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-grid">
+      <article class="card" tabindex="0" data-group="view" data-title="Terrace Frame House" data-description="A front elevation built around a strong rectangular frame, open terrace edge, and warm facade lighting that sharpens the entry sequence." data-image="assets/projects/project-01.png">
+        <div class="card-media">
+          <img src="assets/projects/project-01.png" alt="Modern house facade with terrace frame and warm exterior lights">
+          <span class="card-tag">3D View</span>
+        </div>
+        <div class="card-body">
+          <h3>Terrace Frame House</h3>
+          <p>A compact facade study that uses symmetry, layered depth, and planted edges to give a narrow frontage a strong presence.</p>
+          <span class="prompt">Open preview</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" data-group="view" data-title="Stone Spine Residence" data-description="This concept uses a vertical stone core and deep wooden frame to anchor the facade while keeping the balcony visually light." data-image="assets/projects/project-02.png">
+        <div class="card-media">
+          <img src="assets/projects/project-02.png" alt="Tall narrow residence with stone accent wall and wood cladding">
+          <span class="card-tag">3D View</span>
+        </div>
+        <div class="card-body">
+          <h3>Stone Spine Residence</h3>
+          <p>A vertical composition where texture, balcony transparency, and rooftop openness balance a very urban streetscape.</p>
+          <span class="prompt">Open preview</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" data-group="view" data-title="Arched Volume House" data-description="Soft arch detailing and a pale monochrome palette create a calmer, more residential expression without losing modern clarity." data-image="assets/projects/project-03.jpeg">
+        <div class="card-media">
+          <img src="assets/projects/project-03.jpeg" alt="Minimal cream-toned house with arched window and external staircase">
+          <span class="card-tag">3D View</span>
+        </div>
+        <div class="card-body">
+          <h3>Arched Volume House</h3>
+          <p>A softer facade language with restrained detailing, open terrace use, and a clean massing profile suited to quiet neighborhoods.</p>
+          <span class="prompt">Open preview</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" data-group="view" data-title="Linear Balcony House" data-description="A broad front elevation with horizontal rail lines and timber panels designed to keep the composition calm and readable." data-image="assets/projects/project-04.jpeg">
+        <div class="card-media">
+          <img src="assets/projects/project-04.jpeg" alt="Wide modern house elevation with timber accent and balcony">
+          <span class="card-tag">3D View</span>
+        </div>
+        <div class="card-body">
+          <h3>Linear Balcony House</h3>
+          <p>The balcony slab, entry wall, and timber strip work together to create a quiet but polished street presence.</p>
+          <span class="prompt">Open preview</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" data-group="view" data-title="Stormlight Villa" data-description="A high-contrast render showing how linear lighting and solid white volumes can stay sharp even in dramatic low-light conditions." data-image="assets/projects/project-05.jpeg">
+        <div class="card-media">
+          <img src="assets/projects/project-05.jpeg" alt="Modern villa under dark storm clouds with glowing facade lighting">
+          <span class="card-tag">3D View</span>
+        </div>
+        <div class="card-body">
+          <h3>Stormlight Villa</h3>
+          <p>A facade experiment focused on mood, night lighting, and crisp edges that hold their character under changing weather.</p>
+          <span class="prompt">Open preview</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" data-group="view" data-title="Screen Detail Study" data-description="A more graphic elevation that tests vertical fins, cutout panels, and layered frames to create shade and identity." data-image="assets/projects/project-06.jpeg">
+        <div class="card-media">
+          <img src="assets/projects/project-06.jpeg" alt="Modern house featuring vertical fins and patterned facade screen">
+          <span class="card-tag">3D View</span>
+        </div>
+        <div class="card-body">
+          <h3>Screen Detail Study</h3>
+          <p>A facade composition driven by shadow-making elements, narrow openings, and controlled texture across a simple form.</p>
+          <span class="prompt">Open preview</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" data-group="view" data-title="Light Line Residence" data-description="This design introduces a thin illuminated reveal to emphasize the height of the entry mass and sharpen the evening facade." data-image="assets/projects/project-07.png">
+        <div class="card-media">
+          <img src="assets/projects/project-07.png" alt="Contemporary facade with illuminated vertical line beside entrance">
+          <span class="card-tag">3D View</span>
+        </div>
+        <div class="card-body">
+          <h3>Light Line Residence</h3>
+          <p>An intentionally minimal front elevation where one illuminated gesture provides identity without crowding the facade.</p>
+          <span class="prompt">Open preview</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" data-group="view" data-title="Tall Urban Facade" data-description="A narrow plot solution with vertical glazing, warm cladding panels, and stacked outdoor spaces for a dense city context." data-image="assets/projects/project-08.png">
+        <div class="card-media">
+          <img src="assets/projects/project-08.png" alt="Narrow urban house with tall glazed strip and rooftop terrace">
+          <span class="card-tag">3D View</span>
+        </div>
+        <div class="card-body">
+          <h3>Tall Urban Facade</h3>
+          <p>A slim-profile residence that uses proportion, glass height, and material contrast to keep the elevation elegant.</p>
+          <span class="prompt">Open preview</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="plans">
+    <div class="section-heading">
+      <div>
+        <h2>Floor Plan Collection</h2>
+        <p>A larger planning set covering compact, angled, duplex, and courtyard-based layouts from concept planning through more detailed residential arrangements.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-grid plan-grid">
+      <article class="card" tabindex="0" data-group="plan" data-title="First Floor Plan" data-description="Upper-floor planning study showing bedroom zoning, balcony placement, and circulation along an angled site edge." data-image="assets/plans/first-floor.png">
+        <div class="card-media">
+          <img src="assets/plans/first-floor.png" alt="First floor plan with angled site layout">
+          <span class="card-tag">Plan</span>
+        </div>
+        <div class="card-body">
+          <h3>First Floor Plan</h3>
+          <p>A planning view that organizes private rooms around a clear passage while responding to the geometry of the site boundary.</p>
+          <span class="prompt">Open preview</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" data-group="plan" data-title="Ground Floor Plan" data-description="Ground-floor arrangement balancing parking, lawn edge, living areas, and service zones in a compact footprint." data-image="assets/plans/ground-floor.png">
+        <div class="card-media">
+          <img src="assets/plans/ground-floor.png" alt="Ground floor plan showing entry, lounge, kitchen and parking">
+          <span class="card-tag">Plan</span>
+        </div>
+        <div class="card-body">
+          <h3>Ground Floor Plan</h3>
+          <p>A compact layout with a direct entry sequence, open dining-lounge relationship, and efficient placement of utilities.</p>
+          <span class="prompt">Open preview</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" data-group="plan" data-title="Angled Upper Floor Layout" data-description="A compact upper-level plan that resolves circulation, balcony, service spaces, and bedrooms inside an irregular site boundary." data-image="assets/plans/collection/plan-01.jpeg">
+        <div class="card-media">
+          <img src="assets/plans/collection/plan-01.jpeg" alt="Angled upper floor plan with two bedrooms and balcony">
+          <span class="card-tag">Plan</span>
+        </div>
+        <div class="card-body">
+          <h3>Angled Upper Floor Layout</h3>
+          <p>A clean first-floor arrangement using the site geometry to shape the stair landing, balcony edge, and bedroom placement.</p>
+          <span class="prompt">Open preview</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" data-group="plan" data-title="Compact Corner Ground Plan" data-description="A ground-floor concept organizing the living room, dining, kitchen, and entry around a tight corner plot with a clear stair connection." data-image="assets/plans/collection/plan-02.jpeg">
+        <div class="card-media">
+          <img src="assets/plans/collection/plan-02.jpeg" alt="Compact corner ground floor plan with dining and lounge">
+          <span class="card-tag">Plan</span>
+        </div>
+        <div class="card-body">
+          <h3>Compact Corner Ground Plan</h3>
+          <p>An efficient front-entry layout with open social space and service rooms packed neatly into a smaller footprint.</p>
+          <span class="prompt">Open preview</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" data-group="plan" data-title="Courtyard Family Plan" data-description="A wider residential planning study with central living-dining space, side courtyard, front lawn, and guest-support rooms." data-image="assets/plans/collection/plan-03.jpeg">
+        <div class="card-media">
+          <img src="assets/plans/collection/plan-03.jpeg" alt="Courtyard family floor plan with front lawn and parking">
+          <span class="card-tag">Plan</span>
+        </div>
+        <div class="card-body">
+          <h3>Courtyard Family Plan</h3>
+          <p>A family-oriented arrangement balancing privacy, internal light, and landscape pockets within a long rectangular site.</p>
+          <span class="prompt">Open preview</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" data-group="plan" data-title="30 Foot Mixed-Use Style Plan" data-description="A narrow-width planning study that combines an office, drawing room, lobby, bedrooms, and utility zones in a linear organization." data-image="assets/plans/collection/plan-04.jpeg">
+        <div class="card-media">
+          <img src="assets/plans/collection/plan-04.jpeg" alt="30 foot wide narrow house plan with office and bedrooms">
+          <span class="card-tag">Plan</span>
+        </div>
+        <div class="card-body">
+          <h3>30 Foot Linear Plan</h3>
+          <p>A long-format plan that stacks private and semi-public rooms efficiently while preserving ventilation pockets.</p>
+          <span class="prompt">Open preview</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" data-group="plan" data-title="22 Foot Compact Residence Plan" data-description="A tightly organized residential plan with three bedrooms, drawing room, lobby dining, and a front lawn-parking arrangement." data-image="assets/plans/collection/plan-05.jpeg">
+        <div class="card-media">
+          <img src="assets/plans/collection/plan-05.jpeg" alt="22 foot compact residential floor plan with parking and lawn">
+          <span class="card-tag">Plan</span>
+        </div>
+        <div class="card-body">
+          <h3>22 Foot Compact Residence</h3>
+          <p>A practical narrow-site solution with balanced room sizes, clear circulation, and a strong front-entry sequence.</p>
+          <span class="prompt">Open preview</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" data-group="plan" data-title="Linear Duplex Ground Plan" data-description="A ground-floor scheme organized along a long site depth, integrating dining, drawing, bedrooms, store, and internal light courts." data-image="assets/plans/collection/plan-06.jpeg">
+        <div class="card-media">
+          <img src="assets/plans/collection/plan-06.jpeg" alt="Linear duplex ground floor plan with bedrooms and central staircase">
+          <span class="card-tag">Plan</span>
+        </div>
+        <div class="card-body">
+          <h3>Linear Duplex Ground Plan</h3>
+          <p>A long-axis arrangement that keeps daily living spaces connected while preserving bedroom privacy and service efficiency.</p>
+          <span class="prompt">Open preview</span>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0" data-group="plan" data-title="Angled Site First Floor" data-description="A more detailed first-floor study responding to a diagonal site edge with bedrooms, dining, utility, and stair access." data-image="assets/plans/collection/plan-07.jpeg">
+        <div class="card-media">
+          <img src="assets/plans/collection/plan-07.jpeg" alt="Detailed first floor plan on angled site with dining and bedrooms">
+          <span class="card-tag">Plan</span>
+        </div>
+        <div class="card-body">
+          <h3>Angled Site First Floor</h3>
+          <p>A geometry-led plan that uses the unusual edge condition to shape balcony, room proportions, and circulation logic.</p>
+          <span class="prompt">Open preview</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="process">
+    <div class="section-heading">
+      <div>
+        <h2>Architecture Design Process to Construction</h2>
+        <p>The studio workflow moves from requirement study and concept planning through technical development, coordination, and execution support on site.</p>
+      </div>
+    </div>
+
+    <div class="process-grid">
+      <article class="process-step">
+        <span>Step 01</span>
+        <strong>Client Brief and Site Understanding</strong>
+        <p>We begin with lifestyle needs, plot conditions, climate, circulation requirements, and the budget framework before design directions are proposed.</p>
+      </article>
+
+      <article class="process-step">
+        <span>Step 02</span>
+        <strong>Concept Planning and 3D Development</strong>
+        <p>Initial plans, facade options, and 3D views are developed to test massing, room relationships, light, and the overall architectural identity.</p>
+      </article>
+
+      <article class="process-step">
+        <span>Step 03</span>
+        <strong>Technical Drawings and Coordination</strong>
+        <p>After approval, the design is translated into working drawings, floor plans, elevations, sections, and coordinated interior or structural inputs.</p>
+      </article>
+
+      <article class="process-step">
+        <span>Step 04</span>
+        <strong>Construction and Site Execution</strong>
+        <p>During construction, the studio supports execution with clarifications, design checks, and decisions that help retain the quality of the approved concept.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="contact-panel">
+      <div class="contact-copy">
+        <p class="eyebrow">Contact</p>
+        <h2>Ready to develop a facade, plan, or full residential concept.</h2>
+        <p>The page now presents exterior studies, floor plan work, and a clearer design-to-construction process in one consistent studio presentation.</p>
+      </div>
+
+      <div class="contact-card">
+        <strong>Phone</strong>
+        <a href="tel:7052223660">7052223660</a>
+        <strong>WhatsApp</strong>
+        <a href="https://wa.me/917052223660">7052223660</a>
+        <strong>Email</strong>
+        <a href="mailto:aford.arch1@gmail.com">aford.arch1@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-line">
+      <p>AFORD Architects</p>
+      <div class="footer-links">
+        <a href="https://youtube.com/@afordarchitects?si=PPq-5AQTjC2NCDM9" target="_blank" rel="noreferrer">YouTube</a>
+        <a href="https://www.instagram.com/aford.arch?igsh=MXc0NzI1bXJhdXQ1" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://www.facebook.com/share/1E6innAqHA/" target="_blank" rel="noreferrer">Facebook</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</main>
+
+<div class="lightbox" id="lightbox" hidden>
+  <div class="lightbox-panel" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <div class="lightbox-top">
+      <div class="lightbox-copy">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-description"></p>
+      </div>
+      <button class="lightbox-close" type="button" id="lightbox-close" aria-label="Close preview">X</button>
+    </div>
+    <div class="lightbox-image">
+      <img id="lightbox-image" src="" alt="">
+    </div>
+  </div>
+</div>
+
+<script>
+const chips = document.querySelectorAll(".chip");
+const cards = document.querySelectorAll(".card");
+const lightbox = document.getElementById("lightbox");
+const lightboxTitle = document.getElementById("lightbox-title");
+const lightboxDescription = document.getElementById("lightbox-description");
+const lightboxImage = document.getElementById("lightbox-image");
+const lightboxClose = document.getElementById("lightbox-close");
+
+function applyFilter(filter) {
+  cards.forEach((card) => {
+    const matches = filter === "all" || card.dataset.group === filter;
+    card.hidden = !matches;
+  });
+
+  chips.forEach((chip) => {
+    chip.classList.toggle("is-active", chip.dataset.filter === filter);
+  });
+}
+
+function openLightbox(card) {
+  lightboxTitle.textContent = card.dataset.title;
+  lightboxDescription.textContent = card.dataset.description;
+  lightboxImage.src = card.dataset.image;
+  lightboxImage.alt = card.querySelector("img").alt;
+  lightbox.hidden = false;
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+  lightbox.hidden = true;
+  lightboxImage.src = "";
+  document.body.style.overflow = "";
+}
+
+chips.forEach((chip) => {
+  chip.addEventListener("click", () => applyFilter(chip.dataset.filter));
+});
+
+cards.forEach((card) => {
+  card.addEventListener("click", () => openLightbox(card));
+  card.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      openLightbox(card);
+    }
+  });
+});
+
+lightboxClose.addEventListener("click", closeLightbox);
+
+lightbox.addEventListener("click", (event) => {
+  if (event.target === lightbox) {
+    closeLightbox();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !lightbox.hidden) {
+    closeLightbox();
+  }
+});
+</script>
+</body>
+</html>
